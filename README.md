@@ -13,6 +13,7 @@ AbpMongodb.MongoDB.AbpMongodbMongoDbContext.cs
 
  方式二：
  还有一种方式时在DbContext的CreateModel中进行配置（类似EF）
+ 
  详见：AbpMongodb.MongoDB.AbpMongodbMongoDbContext
   
  BsonClassMap.RegisterClassMap<MyEntity>(cm =>
