@@ -17,14 +17,23 @@ AbpMongodb.MongoDB.AbpMongodbMongoDbContext.cs
  详见：AbpMongodb.MongoDB.AbpMongodbMongoDbContext
   
  BsonClassMap.RegisterClassMap<MyEntity>(cm =>
+       
  {
+ 
  cm.AutoMap();
+ 
  //Id是继承自Entity的属性，会报异常：
+ 
  //System.ArgumentOutOfRangeException: The memberInfo argument must be for class MyEntity, but was for class Entity. (Parameter 'memberInfo')
+ 
  cm.MapMember(c => c.Id).SetSerializer(new StringSerializer(BsonType.ObjectId));
+ 
  //UserId是MyEntity的属性，不会报异常
+ 
  cm.MapMember(c => c.UserId).SetSerializer(new StringSerializer(BsonType.ObjectId));
+ 
  });
+ 
 
 
  遇到的问题：无法将Id字段的类型设置为ObjectId
