@@ -6,6 +6,11 @@ namespace AbpMongodb.Users
 {
     public class MyEntity : Entity<string>
     {
+        public MyEntity(string id)
+        {
+            this.Id = id;
+        }
+
         //使用ObjectId作为Id（_id）字段的类型，是mongodb的最佳实践
         //一般，有两种方式来配置：
 

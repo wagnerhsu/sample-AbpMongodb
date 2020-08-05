@@ -1,4 +1,6 @@
-﻿using AbpMongodb.Localization;
+﻿using System.Threading.Tasks;
+using AbpMongodb.Localization;
+using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc;
 
 namespace AbpMongodb.Controllers
@@ -7,9 +9,19 @@ namespace AbpMongodb.Controllers
      */
     public abstract class AbpMongodbController : AbpController
     {
+        readonly IAbpMongodbAppService abpMongodbAppService;
+
+
         protected AbpMongodbController()
         {
             LocalizationResource = typeof(AbpMongodbResource);
+        }
+
+        public async Task<IActionResult> TestAsync()
+        {
+            await abpMongodbAppService.TestAsync();
+
+            return Content("ok");
         }
     }
 }
