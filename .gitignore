@@ -258,3 +258,4 @@ src/AbpMongodb.IdentityServer/Logs/*
 src/AbpMongodb.HttpApi.Host/Logs/*
 src/AbpMongodb.HttpApi.HostWithIds/Logs/*
 src/AbpMongodb.DbMigrator/Logs/*
+libs/
